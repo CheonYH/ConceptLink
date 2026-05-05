@@ -21,13 +21,21 @@ struct BottomTabbarView: View {
         ZStack(alignment: .bottom) {
             switch selection {
             case .main:
-                MainView()
+                NavigationStack {
+                    MainView()
+                }
             case .concept:
-                SettingView()
+                NavigationStack {
+                    SettingView()
+                }
             case .note:
-                NoteView()
+                NavigationStack {
+                    NoteView()
+                }
             case .setting:
-                SettingView()
+                NavigationStack {
+                    SettingView()
+                }
             }
             
             CustomBottomTabbarView(selectedTab: $selection)
